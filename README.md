@@ -66,23 +66,20 @@ Run the server using:
 python manage.py runserver
 ```
 
-#  Generating Fixtures (Seeding Roles)
+#  Generating Fixtures (Seeding Permissions)
 
-## Roles:
-- Superadmin
-- Admin
+## Permissions
 
-
-Load roles needed in app into the db
+Load permissions needed in app into the db
 
 ```bash
 python manage.py loaddata */fixtures/*.json
 ```
 
-Export Roles from db
+Export Permissions from db
 
 ```sh
-python manage.py dumpdata  --format=json user.Role -o core/fixtures/Role.json
+python manage.py dumpdata  --format=json user.Permission -o core/fixtures/Permission.json
 ```
 
 
