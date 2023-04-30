@@ -1,0 +1,28 @@
+from dataclasses import dataclass
+
+TOKEN_TYPE_CHOICE = (
+    ("ACCOUNT_VERIFICATION", "ACCOUNT_VERIFICATION"),
+    ("PASSWORD_RESET", "PASSWORD_RESET"),
+)
+
+ROLE_CHOICE = (
+    ("ADMIN", "ADMIN"),
+    ("MANAGER", "MANAGER"),
+    ("SALES", "SALES"),
+    ("AUDITOR", "AUDITOR"),
+    ("REGULAR", "REGULAR"),
+)
+
+@dataclass
+class TokenEnum:
+    ACCOUNT_VERIFICATION = "ACCOUNT_VERIFICATION"
+    PASSWORD_RESET = "PASSWORD_RESET"
+
+
+@dataclass
+class SystemRoleEnum:
+    SUPERADMIN = "SUPERADMIN"
+    MANAGER = "MANAGER"
+    SALES = "SALES"
+    AUDITOR = "AUDITOR"
+    REGULAR = "REGULAR"
