@@ -1,25 +1,20 @@
-# Django API deployment to AWS EC2 instance
-This guide offers hands-on experience in deploying a Django API to an AWS EC2 instance.
+# Implementing Custom Authentication and Authorization in Django & DRF
 
-Although the guide uses an EC2 instance, the knowledge gained here 
-can be transferred to any server instance
 
 ## Tools & Services:
 - Django & DRF : for building the APIs
 - Docker & Docker compose: Containerization
 - Celery: For running background task
 - Rabbit MQ: A message broker for celery
-- Nginx:Reverse proxy
-- Letsencrypt & Certbot:SSL certificate
-- gunicorn:Production ready web server for python/djang0
 - Flower dashboard: For monitoring celery background tasks
 - PostgreSQL: Relational DB
 
 
 ## By the end of this tutorial 
 
-- We would be able to deploy a Django api running at ap1.example.com
-- Flower dashboard for monitoring celery background task at dashboard.example.com
+- Create an API that allows an admin to create roles and assign permissions into the role.
+- Create users and assign one or more roles to users.
+- Use these roles and permissions to protect API endpoints so that only users with the appropriate permissions can access them
 
 ## Running locally
 
