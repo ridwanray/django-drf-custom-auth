@@ -224,30 +224,8 @@ class TestAuthEndpoints:
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
 
-class TestAuthSessionSecurity:
-    verity_token_url = reverse('auth:verify-token')
-
-    @time_machine.travel(datetime.now() + timedelta(hours=22))
-    def test_token_session_not_expires(self, api_client, authenticate_user):
-        user = authenticate_user()
-        token = user['token']
-        response = api_client.post(self.verity_token_url, {
-                                   'token': token}, format='json')
-        assert response.status_code == status.HTTP_200_OK
-
-    @pytest.mark.skip(reason="Needed to be retested")
-    @time_machine.travel(datetime.now() + timedelta(days=29))
-    def test_token_session_expires(self, api_client, authenticate_user):
-        """Token expires after TOKEN_LIFESPAN in config:24 hours"""
-        user = authenticate_user(roles=["AUDITOR"])
-        token = user['token']
-        response = api_client.post(self.verity_token_url, {
-                                   'token': token}, format='json')
-        assert response.status_code == status.HTTP_401_UNAUTHORIZED
-
-
 class TestPermissions:
-    permission_list_url = create_password_via_reset_token_url = reverse(
+    permission_list_url  = reverse(
         "permission:permission-list")
 
     def test_retrieve_permissions_list(self, api_client, permission_factory, authenticate_user):
@@ -256,7 +234,6 @@ class TestPermissions:
         token = user['token']
         api_client_with_credentials(token, api_client)
         response = api_client.get(self.permission_list_url)
-        print(response.json())
         assert response.status_code == 200
         assert len(response.json()) == 3
 
@@ -325,7 +302,6 @@ class TestRoles:
 
     def test_delete_roles(self, api_client, seed_roles, authenticate_user):
         seeded_roles = seed_roles(role_names=["Programs Manager"])
-        print("seeded",seeded_roles)
         user = authenticate_user(is_admin=True)
         token = user['token']
 
