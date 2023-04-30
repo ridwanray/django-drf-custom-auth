@@ -1,4 +1,4 @@
-# Implementing Custom Authentication and Authorization in Django & DRF
+# Custom Authentication and Authorization in Django & DRF
 
 
 ## Tools & Services:
