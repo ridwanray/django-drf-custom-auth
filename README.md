@@ -91,11 +91,7 @@ Access docs:
 http://localhost:8000/api/v1/doc
 ```
 
-![Screenshot](screenshot1.png)
 
-
-## Deployed API
+## API TEST OUT
 ![Screenshot](screenshot2.png)
 
-## Flower dashboard
-![Screenshot](screenshot3.png)
