@@ -42,7 +42,7 @@ def permission_checker(perm):
     return decorator
 
 
-class PermissionMixin:
+class CustomPermissionMixin:
     """
     Custom Permission mixin
     """

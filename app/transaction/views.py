@@ -2,13 +2,13 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from user.permission_list import PERMISSIONS
-from user.permissions import PermissionMixin
+from user.permissions import CustomPermissionMixin
 
 from .models import Transaction
 from .serializers import TransactionSerializer
 
 
-class TransactionViewSet(PermissionMixin,viewsets.ModelViewSet):
+class TransactionViewSet(CustomPermissionMixin,viewsets.ModelViewSet):
     queryset = Transaction.objects.all()
     pagination_class = None
     http_method_names = ["get"]
