@@ -87,8 +87,6 @@ Access docs:
 ```sh
 http://localhost:8000/api/v1/doc
 ```
-
-
-## API TEST OUT
+![Screenshot](screenshot1.png)
+<br><br><br>
 ![Screenshot](screenshot2.png)
-
