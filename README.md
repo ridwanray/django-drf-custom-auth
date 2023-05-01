@@ -15,6 +15,7 @@
 - Create an API that allows an admin to create roles and assign permissions into the role.
 - Create users and assign one or more roles to users.
 - Use these roles and permissions to protect API endpoints so that only users with the appropriate permissions can access them
+- Lock a user account after the maximum allowable failed attempts.
 
 ## Running locally
 
