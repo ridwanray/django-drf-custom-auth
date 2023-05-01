@@ -90,3 +90,5 @@ http://localhost:8000/api/v1/doc
 ![Screenshot](screenshot1.png)
 <br><br><br>
 ![Screenshot](screenshot2.png)
+<br><br><br>
+![Screenshot](screenshot3.png)
