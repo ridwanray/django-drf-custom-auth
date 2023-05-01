@@ -27,6 +27,7 @@ class TestTransactions:
         assert response.status_code == 403
 
     def test_view_transaction(self, api_client, authenticate_user):
+        """User having ViewTransaction permission has access"""
         user = authenticate_user(permissions = [PERMISSIONS.ViewTransaction,])
         token = user['token']
         api_client_with_credentials(token, api_client)

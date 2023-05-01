@@ -24,24 +24,6 @@ def check_user_has_permissions(user:User, required_perms:list):
         raise PermissionDenied
 
 
-def permission_checker(perm):
-    """
-    Custom permission checker decorator.
-    """
-
-    def decorator(view_func):
-        @wraps(view_func)
-        def wrapper(cls, request, *args, **kwargs):
-            perms = [perm] if isinstance(perm, str) else perm
-            user = request.user
-            check_user_has_permissions(user, perms)
-            return view_func(cls, request, *args, **kwargs)
-
-        return wrapper
-
-    return decorator
-
-
 class CustomPermissionMixin:
     """
     Custom Permission mixin
