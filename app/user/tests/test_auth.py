@@ -208,7 +208,7 @@ class TestAuthEndpoints:
     
 
     def test_account_not_locked(self, api_client, active_user):
-        """Account not locked when within login attempt"""
+        """Account not locked when the maximum login attempts are not exceededs"""
         url = reverse('auth:login')
         assert active_user.is_active 
         data = {
