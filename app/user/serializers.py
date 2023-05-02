@@ -203,8 +203,6 @@ class CreateUserSerializer(serializers.ModelSerializer):
             "roles": {"required": True},
         }
 
-    def validate(self, attrs):
-        return super().validate(result)
 
     def validate_email(self, value):
         if value:
